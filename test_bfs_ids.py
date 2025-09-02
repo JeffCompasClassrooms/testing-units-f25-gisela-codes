@@ -9,7 +9,6 @@ class test_search_core(unittest.TestCase):
         return self.graph.get(node, [])
 
     def test_bfs1(self):
-        # Graph: A -> B, A -> C, B -> D
         self.graph = {
             "A": ["B", "C"],
             "B": ["D"],

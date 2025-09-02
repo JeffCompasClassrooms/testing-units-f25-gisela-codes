@@ -58,7 +58,6 @@ def depth_limited_dfs(state, goal, limit, path, visited, gen_actions):
         return "cutoff", generated, expanded, max_frontier
     return None, generated, expanded, max_frontier
 
-
 def ids(start, goal, gen_actions):
     depth_limit = 0
     generated = 0
