@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  RunUnitTests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pytest pytest-spec pytest-describe coverage
+      
+      - name: run test
+        run: pytest --spec
+
+      - name: run coverage
+        run: |
+          coverage run -m pytest
+          coverage report -m
